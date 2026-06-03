@@ -187,7 +187,7 @@ Liext（全称Long Instruction Extend）指令用作与后面的基础指令进�
 | REV32 | rev32 SrcL.{T}, ->{t,u,m,n}.{w} | 每32bit内大小端转换 |
 | REV64 | rev64 SrcL.{T}, ->{t,u,m,n}.{w} | 64bit内大小端转换 |
 | CTZ | ctz SrcL.{T}, ->{t,u,m,n}.{w} | 有效位从低到高，计数第一个1之前0的位数 |
-| CLZ | clz SrcL.{T}, ->{t,u,m,n}.{w} | 有效位从高到低，计数第一个1之前0的位数 |
+| CLS | cls SrcL.{T}, ->{t,u,m,n}.{w} | 有效位从高到低，计数与符号位相同的连续位数 |
 
 - **内存申请和释放指令**
 

@@ -4,13 +4,24 @@
 
 **B.IOT(Block Input and Output Tile Register)**
 
-本指令用于数据块指令块头中定义输入输出的[Tile寄存器](../register/common/tilereg.md)，并且指示输出的Tile 寄存器的大小。
+本指令用于数据块指令块头中定义输入输出的[Tile寄存器](../register/common/tilereg.md)，并且指示输出的Tile 寄存器的大小。此外，本指令也用于[Persistent Tile](../register/common/PT.md)（PT）的分配与释放。
 
 ## 汇编格式
 
 ```asm
     B.IOT SrcTile0<.reuse>, SrcTile1<.reuse> <,last>, ->DstTile<Size>
 ```
+
+另外，本指令支持 Persistent Tile 的分配与释放：
+
+```asm
+    B.IOT [xx], ->PT<Size>       # 分配 Persistent Tile
+    B.IOT [xx], ->PT.FREE        # 释放 Persistent Tile
+```
+
+* **xx**：保留字段（当前未使用）。
+* **PT\<Size\>**：分配大小为 Size 的 Persistent Tile 寄存器，有效范围 256B ~ 256KB。
+* **PT.FREE**：释放之前分配的 Persistent Tile。
 
 * **SrcTile0, SrcTile1**: 指定两个输入 Tile 寄存器。
 * **reuse**: 输入 Tile 寄存器的可选后缀。当存在时，表示所在块指令提交后，硬件不能释放对应的 Tile 寄存器（该寄存器将被后续指令再次读取）。

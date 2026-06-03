@@ -94,7 +94,7 @@ Current version:
 The modified instructions in this version are as follows:
 
 1. The addpc command is renamed to setret and the code is reused with addtpc. Multiplexing encoding with addtpc can save Opcode space and reserve more space for subsequent expansion.
-2. Adjust the semantics of ctz and clz instructions, and add M and N parameters in assembly (compatible with the functions of ctzw and clzw). After the modification, the instruction implementation is more flexible, and the encoding method of bit operation instructions tends to be unified.
+2. Adjust the semantics of ctz and cls instructions, and add M and N parameters in assembly (compatible with the functions of ctzw and clsw). After the modification, the instruction implementation is more flexible, and the encoding method of bit operation instructions tends to be unified.
 3. rev16, rev32 and rev64 are combined into one rev instruction. The encoding format is unified, and the instruction implementation is more flexible.
 4. Add the bcnt instruction to supplement the scalar instruction function, which is used to count the number of bits in the register that are 1.
 5. The third input SrcR of the csel instruction adds the ".neg" optional parameter. After adding this parameter, the cneg operation can be implemented, and a register original value or a negative value can be selected according to conditions. The benefit of reducing the number of dynamic instructions can be obtained in the 525 subkey.

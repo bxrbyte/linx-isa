@@ -179,7 +179,7 @@ The data type conversion instruction is used to support conversion operations be
 | REV32 | rev32 SrcL.{T}, ->{t,u,m,n}.{w} | Big-endian conversion within every 32 bits |
 | REV64 | rev64 SrcL.{T}, ->{t,u,m,n}.{w} | Big-endian conversion within 64bit |
 | CTZ | ctz SrcL.{T}, ->{t,u,m,n}.{w} | The effective bits are from low to high, counting the number of 0s before the first 1 |
-| CLZ | clz SrcL.{T}, ->{t,u,m,n}.{w} | The effective bits are from high to low, counting the number of 0s before the first 1 |
+| CLS | cls SrcL.{T}, ->{t,u,m,n}.{w} | Count leading sign bits (matching the MSB) from high to low |
 
 - **Memory application and release instructions**
 

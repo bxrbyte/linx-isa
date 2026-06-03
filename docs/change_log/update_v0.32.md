@@ -31,8 +31,8 @@ In v0.32, the source register of each microinstruction can index the TP/GP/CP re
 #### In order to improve the efficiency of string library processing, new bit manipulation instructions are added
 
 - ctzw: Count trailing zeros within the least significant word.  
-- clz: Count leading zeros within the entire 64bit.  
-- clzw: Count leading zeros within the least significant word.  
+- cls: Count leading sign bits within the entire 64bit.  
+- clsw: Count leading sign bits within the least significant word.  
 
 #### In order to reduce the complexity of hardware implementation. The bit operation instruction bfi encoding update: changed to a two-input instruction, M/N is expressed in the instruction encoding.
 
